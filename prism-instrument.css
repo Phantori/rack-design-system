@@ -1,0 +1,68 @@
+/* =====================================================
+   PRISM INSTRUMENT PANEL
+   Module 04 · Lighting · Department I — WorldConstruction
+   Channel: --ch04-prism (#e0d8ff)
+   ===================================================== */
+
+.prism-layer-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 18px;
+  background: linear-gradient(90deg, rgba(224,216,255,0.06), transparent 60%);
+  border-top: 1px solid rgba(224,216,255,0.10);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.prism-layer-num {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--ch04-prism);
+  text-shadow: 0 0 6px rgba(224,216,255,0.7);
+  letter-spacing: 0.15em;
+}
+.prism-layer-name {
+  font-family: var(--font-engrave);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: var(--ink-mid);
+  text-transform: uppercase;
+  flex: 1;
+}
+.prism-layer-wire {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: rgba(224,216,255,0.55);
+  border: 1px solid rgba(224,216,255,0.18);
+  border-radius: 2px;
+  padding: 1px 5px;
+}
+.prism-component-row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.prism-component {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-right: 1px solid rgba(255,255,255,0.03);
+  position: relative;
+  gap: 8px;
+}
+.prism-component:last-child { border-right: none; }
+.prism-component::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(224,216,255,0.18), transparent 80%);
+}
+.prism-comp-id   { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+.prism-comp-code { font-family: var(--font-mono); font-size: 9px; color: var(--ch04-prism); text-shadow: 0 0 5px rgba(224,216,255,0.6); letter-spacing: 0.1em; }
+.prism-comp-name { font-family: var(--font-engrave); font-size: 8px; letter-spacing: 0.18em; color: var(--ink-dim); text-transform: uppercase; flex: 1; }
+.prism-comp-controls { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+.prism-comp-jacks    { display: flex; gap: 4px; margin-top: 4px; }
+.prism-viz-strip  { padding: 0 18px 10px; display: flex; gap: 12px; align-items: center; }
+.prism-status-bar { display: flex; gap: 12px; align-items: center; padding: 6px 18px; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(224,216,255,0.08); flex-wrap: wrap; }
