@@ -1,0 +1,292 @@
+/* =====================================================
+   AXIOM SIGNAL CHAIN RACK
+   Vertical Reason-style rack layout
+   Built on Timeline · BioSpark Design System
+   ===================================================== */
+
+/* PAGE */
+.axiom-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 25% 35%, rgba(148,0,211,0.14), transparent 52%),
+    radial-gradient(ellipse at 78% 18%, rgba(0,191,255,0.11), transparent 48%),
+    radial-gradient(ellipse at 55% 85%, rgba(255,20,147,0.09), transparent 44%),
+    var(--abyss);
+  display: flex;
+  justify-content: center;
+  padding: 40px 24px 100px;
+}
+
+/* RACK SHELL — outer frame with rails */
+.axiom-rack {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.9),
+    0 24px 80px rgba(0,0,0,0.85),
+    0 0 60px rgba(0,191,255,0.06);
+}
+
+/* SIDE RAILS */
+.axiom-rail {
+  width: 22px;
+  background: linear-gradient(180deg, #1e2230 0%, #12151e 50%, #1e2230 100%);
+  border: 1px solid #0a0c12;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0;
+  gap: 0;
+  flex-shrink: 0;
+}
+.axiom-rail-left  { border-right: 1px solid rgba(255,255,255,0.04); }
+.axiom-rail-right { border-left:  1px solid rgba(255,255,255,0.04); }
+.axiom-rail .screw { width: 7px; height: 7px; }
+
+/* RACK BODY */
+.axiom-rack-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background: #040609;
+  padding: 6px;
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.9),
+    inset 0 4px 24px rgba(0,0,0,0.95);
+}
+
+/* RACK TITLE BAR */
+.axiom-rack-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  margin-bottom: 1px;
+  background: linear-gradient(180deg, #1c2030 0%, #0e1118 100%);
+  border-radius: 4px 4px 0 0;
+  border-bottom: 2px solid rgba(0,191,255,0.25);
+  box-shadow: 0 0 24px rgba(0,191,255,0.08);
+  position: relative;
+}
+.axiom-rack-title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; left: 10%; right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--signal-cool), transparent);
+  box-shadow: 0 0 8px var(--signal-cool);
+}
+.axiom-rack-title-name {
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 0.3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--signal-cool);
+  text-shadow: 0 0 10px var(--signal-cool);
+}
+.axiom-rack-title-sub {
+  font-family: var(--font-engrave);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  flex: 1;
+}
+
+/* MODULE — full-width, horizontal layout inside */
+.axiom-module {
+  --axiom-ch: var(--signal-cool);
+  background: linear-gradient(180deg, #15192200 0%, #0d1016 100%);
+  background-color: #101418;
+  border: 1px solid rgba(0,0,0,0.7);
+  border-top-color: rgba(255,255,255,0.035);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+.axiom-module::before {
+  /* subtle inner glow from channel color */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--axiom-ch) 6%, transparent), transparent 60%);
+  pointer-events: none;
+}
+
+/* MODULE HEADER */
+.axiom-module-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px 7px 18px;
+  background: linear-gradient(180deg, #1a1f2c 0%, #111520 100%);
+  border-bottom: 1px solid rgba(0,0,0,0.6);
+  position: relative;
+}
+/* Left channel stripe */
+.axiom-module-head::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--axiom-ch);
+  box-shadow: 0 0 10px var(--axiom-ch), 0 0 20px color-mix(in srgb, var(--axiom-ch) 40%, transparent);
+}
+/* Bottom accent line */
+.axiom-module-head::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; left: 3px; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--axiom-ch), transparent 70%);
+  opacity: 0.4;
+}
+
+.axiom-module-crest {
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--axiom-ch) 30%, #1a1d24), #090b10 80%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 0 8px color-mix(in srgb, var(--axiom-ch) 35%, transparent);
+}
+.axiom-module-crest svg { width: 13px; height: 13px; }
+
+.axiom-module-name {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--axiom-ch) 50%, transparent);
+}
+.axiom-module-sub {
+  font-family: var(--font-engrave);
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+  flex: 1;
+}
+.axiom-module-num {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--axiom-ch);
+  text-shadow: 0 0 5px var(--axiom-ch);
+}
+
+/* MODULE BODY */
+.axiom-module-body {
+  padding: 14px 18px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* MODULE PATCH FOOTER */
+.axiom-module-patch {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 9px 18px 9px;
+  border-top: 1px solid rgba(255,255,255,0.035);
+  background: rgba(0,0,0,0.25);
+  align-items: flex-end;
+}
+
+/* SECTION BLOCK within body */
+.axiom-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.axiom-section-label {
+  font-family: var(--font-engrave);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+}
+
+/* FADER GROUP for Persona Forger */
+.axiom-fader-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+.axiom-fader-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+.axiom-fader-label {
+  font-family: var(--font-engrave);
+  font-size: 7px;
+  letter-spacing: 0.14em;
+  color: var(--axiom-ch);
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* NEXUS PATCH BAY GRID */
+.axiom-jack-grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 4px;
+  flex: 1;
+}
+.axiom-jack-row-label {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--ink-dim);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding-right: 6px;
+  letter-spacing: 0.1em;
+}
+
+/* STEP EVENT labels */
+.axiom-step-label {
+  font-family: var(--font-mono);
+  font-size: 7px;
+  color: var(--ink-dim);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-top: 2px;
+}
+
+/* EPOCH SCRUBBER — large ring knob */
+.axiom-epoch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.axiom-epoch-label {
+  font-family: var(--font-engrave);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  color: var(--ink-mid);
+  text-transform: uppercase;
+}
+
+/* CABLE AREA at bottom of patch bay */
+.axiom-cable-area {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  margin-top: 8px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
