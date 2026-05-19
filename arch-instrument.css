@@ -1,0 +1,68 @@
+/* =====================================================
+   ARCHITECT INSTRUMENT PANEL
+   Module 03 · Structure · Department I — WorldConstruction
+   Channel: --signal-amber (#ffae00)
+   ===================================================== */
+
+.arch-layer-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 18px;
+  background: linear-gradient(90deg, rgba(255,174,0,0.07), transparent 60%);
+  border-top: 1px solid rgba(255,174,0,0.12);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.arch-layer-num {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--signal-amber);
+  text-shadow: 0 0 6px var(--signal-amber);
+  letter-spacing: 0.15em;
+}
+.arch-layer-name {
+  font-family: var(--font-engrave);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: var(--ink-mid);
+  text-transform: uppercase;
+  flex: 1;
+}
+.arch-layer-wire {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: rgba(255,174,0,0.6);
+  border: 1px solid rgba(255,174,0,0.22);
+  border-radius: 2px;
+  padding: 1px 5px;
+}
+.arch-component-row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.arch-component {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-right: 1px solid rgba(255,255,255,0.03);
+  position: relative;
+  gap: 8px;
+}
+.arch-component:last-child { border-right: none; }
+.arch-component::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,174,0,0.2), transparent 80%);
+}
+.arch-comp-id   { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+.arch-comp-code { font-family: var(--font-mono); font-size: 9px; color: var(--signal-amber); text-shadow: 0 0 5px var(--signal-amber); letter-spacing: 0.1em; }
+.arch-comp-name { font-family: var(--font-engrave); font-size: 8px; letter-spacing: 0.18em; color: var(--ink-dim); text-transform: uppercase; flex: 1; }
+.arch-comp-controls { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+.arch-comp-jacks    { display: flex; gap: 4px; margin-top: 4px; }
+.arch-viz-strip  { padding: 0 18px 10px; display: flex; gap: 12px; align-items: center; }
+.arch-status-bar { display: flex; gap: 12px; align-items: center; padding: 6px 18px; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(255,174,0,0.1); flex-wrap: wrap; }
