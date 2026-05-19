@@ -1176,7 +1176,13 @@ function AtlasInstrument() {
           <div className="axiom-rack-body">
 
             {/* Rack nameplate */}
-            <div className="axiom-rack-title">
+            <MasterTransport
+            moduleId="terrain"
+            moduleName="ATLAS · TERRAIN"
+            moduleColor={ATLAS_COOL}
+          />
+
+          <div className="axiom-rack-title">
               <div style={{ color: ATLAS_COOL, width: 20, height: 20, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 {Crests.atlas}
               </div>
