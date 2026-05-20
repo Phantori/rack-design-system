@@ -1,0 +1,68 @@
+/* =====================================================
+   ANIMUS INSTRUMENT PANEL
+   Module 05 · Modeling · Department II — Character
+   Channel: --ch05-animus (#f4c025)
+   ===================================================== */
+
+.animus-layer-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 18px;
+  background: linear-gradient(90deg, rgba(244,192,37,0.07), transparent 60%);
+  border-top: 1px solid rgba(244,192,37,0.12);
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+}
+.animus-layer-num {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: var(--ch05-animus);
+  text-shadow: 0 0 6px rgba(244,192,37,0.7);
+  letter-spacing: 0.15em;
+}
+.animus-layer-name {
+  font-family: var(--font-engrave);
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  color: var(--ink-mid);
+  text-transform: uppercase;
+  flex: 1;
+}
+.animus-layer-wire {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: rgba(244,192,37,0.55);
+  border: 1px solid rgba(244,192,37,0.18);
+  border-radius: 2px;
+  padding: 1px 5px;
+}
+.animus-component-row {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+.animus-component {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 14px;
+  border-right: 1px solid rgba(255,255,255,0.03);
+  position: relative;
+  gap: 8px;
+}
+.animus-component:last-child { border-right: none; }
+.animus-component::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(244,192,37,0.2), transparent 80%);
+}
+.animus-comp-id   { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+.animus-comp-code { font-family: var(--font-mono); font-size: 9px; color: var(--ch05-animus); text-shadow: 0 0 5px rgba(244,192,37,0.6); letter-spacing: 0.1em; }
+.animus-comp-name { font-family: var(--font-engrave); font-size: 8px; letter-spacing: 0.18em; color: var(--ink-dim); text-transform: uppercase; flex: 1; }
+.animus-comp-controls { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+.animus-comp-jacks    { display: flex; gap: 4px; margin-top: 4px; }
+.animus-viz-strip  { padding: 0 18px 10px; display: flex; gap: 12px; align-items: center; }
+.animus-status-bar { display: flex; gap: 12px; align-items: center; padding: 6px 18px; background: rgba(0,0,0,0.3); border-bottom: 1px solid rgba(244,192,37,0.1); flex-wrap: wrap; }
